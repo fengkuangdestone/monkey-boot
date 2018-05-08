@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:system.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="contextAttribute" class="com.monkeyframework.boot.resin.spring.ContextAttribute">
+		<property name="port" value="${web.port}" />
+		<property name="executorTaskMax" value="${web.executorTaskMax:16}" />
+		<property name="idleMax" value="${web.idleMax:1073741823}" />
+		<property name="idleMin" value="${web.idleMin:2}" />
+		<property name="idleTimeout" value="${web.idleTimeout:60000}" />
+		<property name="priorityIdleMin" value="${web.priorityIdleMin:2}" />
+		<property name="threadMax" value="${web.threadMax:8192}" />
+		<property name="throttleLimit" value="${web.throttleLimit:100}" />
+		<property name="throttlePeriod" value="${web.throttlePeriod:1000}" />
+		<property name="throttleSleepTime" value="${web.throttleSleepTime:0}" />
+	</bean>	  
+	
+	<bean id="webAppEmbed" class="com.caucho.resin.WebAppEmbed">
+		<property name="contextPath" value="${web.context:/}" />
+		<property name="rootDirectory" value="./webapp" />
+	</bean>
+
+</beans>

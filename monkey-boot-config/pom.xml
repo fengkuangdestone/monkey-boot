@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.monkeyframework.boot</groupId>
+		<artifactId>monkey-boot</artifactId>
+		<version>0.3.5.RELEASE</version>
+	</parent>
+	<artifactId>monkey-boot-config</artifactId>
+	<name>monkey-boot-config</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<config.version>0.2.7.RELEASE</config.version>
+	</properties>
+	
+	<dependencies>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>monkey-boot-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.monkeyframework.config</groupId>
+			<artifactId>monkey-config-core</artifactId>
+			<version>${config.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+	</dependencies>
+</project>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>monkey-boot</artifactId>
+		<groupId>com.monkeyframework.boot</groupId>
+		<version>0.3.5.RELEASE</version>
+	</parent>
+	<artifactId>monkey-boot-core</artifactId>
+	<name>monkey-boot-core</name>
+	<url>http://mvnrepo.monkeyframework.com</url>
+		
+	<dependencies>
+	    
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		
+		<!-- 
+		<dependency>
+    		<groupId>org.jgroups</groupId>
+  			<artifactId>jgroups</artifactId>
+		</dependency>
+		 -->
+		 
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-jar-plugin</artifactId>
+			    <version>2.3.1</version>
+			    <configuration>
+			        <archive>
+			            <manifest>
+			                <addClasspath>false</addClasspath>
+			            </manifest>
+			            <manifestEntries>
+			                <Premain-Class>com.monkeyframework.boot.BootAgent</Premain-Class>
+			                <Can-Redefine-Classes>true</Can-Redefine-Classes>
+			            </manifestEntries>
+			        </archive>
+			    </configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
